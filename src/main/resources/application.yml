@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/springbootdb?useUnicode=true&charactorEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+  username: root
+  password: 19960412Clh
+
+#  mybatis
+mybatis_config_file: mybatis-config.xml
+mapper_path: /mapper/**.xml
+entity_package: com.chensanwa.springboot.entity
