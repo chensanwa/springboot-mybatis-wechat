@@ -30,7 +30,7 @@ public class AreaController {
         return modelMap;
     }
 
-    @GetMapping(value = "getareabyid")
+    @GetMapping(value = "/getareabyid")
     public Map<String,Object> getAreaById(Integer areaId){
         Map<String,Object> modelMap = new HashMap<>();
         Area area = areaService.getAreaById(areaId);
