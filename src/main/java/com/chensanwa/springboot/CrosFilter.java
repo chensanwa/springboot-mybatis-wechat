@@ -32,8 +32,14 @@ public class CrosFilter implements javax.servlet.Filter {
         }
 
         response.addHeader("Access-Control-Allow-Methods","*");
-        //允许JSON请求，并进行预检命令缓存
-        response.addHeader("Access-Control-Allow-Headers","Content-Type");
+
+        //支持所有自定义头
+        String headers = request.getHeader("Access-Control-Request-Headers");
+        if(!StringUtils.isEmpty(headers)){
+            //允许JSON请求，并进行预检命令缓存
+            response.addHeader("Access-Control-Allow-Headers",headers);
+        }
+
         response.addHeader("Access-Control-Max-Age","3600");
 
         //允许cookie
