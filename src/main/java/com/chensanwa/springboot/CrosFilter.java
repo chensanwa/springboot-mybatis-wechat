@@ -21,6 +21,8 @@ public class CrosFilter implements javax.servlet.Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         response.addHeader("Access-Control-Allow-Origin","*");
         response.addHeader("Access-Control-Allow-Methods","*");
+        response.addHeader("Access-Control-Allow-Headers","Content-Type");
+        response.addHeader("Access-Control-Max-Age","3600");
         filterChain.doFilter(servletRequest,response);
     }
 
